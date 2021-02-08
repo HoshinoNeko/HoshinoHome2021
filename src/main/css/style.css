@@ -1,0 +1,152 @@
+:root {
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+* {
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+h1 {
+    margin: 5vh 8vh;
+}
+h1.title {
+    font-size: 100px;
+}
+h2 {
+    margin: 0 8vh
+}
+.name {
+    position: relative;
+    z-index: 1;
+}
+.name::before,.name::after {
+    content: 'Hoshino';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.name::after {
+    z-index: -2;
+}
+.name::before {
+    transform: translate3d(6px, 2px, -5px);
+    color: #208bde;
+}
+.name::after {
+    transform: translate3d(12px, 4px, -10px);
+    color: #754cbc;
+}
+.block {
+    height: auto;
+    min-height: 0;
+    padding-bottom: 4vh;
+}
+.first {
+    position: relative;
+}
+.first::before {
+     content: '';
+     position: absolute;
+     top: 0; right: 0;
+     border-top: 9vh solid white;
+     border-left: 9vh solid #bcbcbc;
+     width: 0;
+}
+#blue {
+    background-color: #2196F3;
+}
+.rainbow {
+    width: auto;
+    margin: 1vh 8vh;
+    display: grid;
+    grid-template-areas: "rainbow_red rainbow_orange rainbow_yellow rainbow_green rainbow_blue rainbow_purple";
+    height: 2vh;
+}
+.rainbow_red {
+    background-color: #e50000;
+}
+.rainbow_orange {
+    background-color: #ff8d00;
+}
+.rainbow_yellow {
+    background-color: #ffee00;
+}
+.rainbow_green {
+    background-color: #008121;
+}
+.rainbow_blue {
+    background-color: #004cff;
+}
+.rainbow_purple {
+    background-color: #760188;
+}
+
+#light_blue {
+    background-color: #673AB7;
+}
+.avatar {
+    border-radius: 50%;
+    position: fixed;
+    right: 1vh;
+    bottom: 1vh;
+    width: 10vh;
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 10px #1d0000;
+    background-color: beige;
+}
+#black {
+    background-color: black;
+}
+.terminal {
+    margin: 0 8vh;
+}
+.head {
+    color: green;
+}
+.terminal::after{
+    content: '|';
+    animation: blink ease-in-out .9s infinite;
+}
+@keyframes blink{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@media (max-width:768px) {
+    :root {
+        font-size: 12px;
+        font-family: 'Open Sans', sans-serif;
+    }
+    h1,h2 {
+        margin: 1vh 5vh;
+    }
+    h1.title {
+        font-size: 50px;
+    }
+    .block {
+        padding-bottom: 2vh;
+    }
+    .terminal {
+        margin: 0 5vh;
+    }
+    .rainbow {
+        margin: 1vh 5vh;
+        height: 1vh;
+    }
+}
